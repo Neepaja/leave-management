@@ -1,4 +1,6 @@
+const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
+
 
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -8,6 +10,7 @@ module.exports = {
 
     await queryInterface.bulkInsert('Users', [
       {
+        user_id: uuidv4(),
         name: 'Emp Person',
         email: 'emp@example.com',
         password: hashedPassword1,
@@ -16,6 +19,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
+        user_id: uuidv4(),
         name: 'Mgr Person',
         email: 'mgr@example.com',
         password: hashedPassword2,
@@ -24,6 +28,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
+        user_id: uuidv4(),
         name: 'HR Person',
         email: 'hr@example.com',
         password: hashedPassword3,
