@@ -31,11 +31,11 @@ fs
     db[model.name] = model;
   });
 
-Object.keys(db).forEach(modelName => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
-});
+db.User = db['User'];
+db.LeaveRequest = db['LeaveRequest'];
+
+db.User.hasMany(db.LeaveRequest, { foreignKey: 'userId' });
+db.LeaveRequest.belongsTo(db.User, { foreignKey: 'userId' });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
