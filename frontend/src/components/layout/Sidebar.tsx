@@ -12,9 +12,9 @@ const Sidebar = () => {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   const links = [
-    { href: "/dashboard", label: "Dashboard", icon: <FiHome /> },
-    { href: "/leave/apply", label: "Apply Leave", icon: <FiEdit /> },
-    { href: "/leave/status", label: "View Leave Status", icon: <FiEye /> },
+    { href: "/employee/dashboard", label: "Dashboard", icon: <FiHome /> },
+    { href: "/employee/leave/apply", label: "Apply Leave", icon: <FiEdit /> },
+    { href: "/manager/dashboard", label: "View Leave Status", icon: <FiEye /> },
     { href: "/manager/requests", label: "Approve Requests", icon: <FiCheckCircle /> },
     { href: "/hr/records", label: "HR Records", icon: <FiFolder /> },
   ];

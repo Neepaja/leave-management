@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import LeaveSummaryCard from "@/components/dashboard/LeaveSummaryCard";
-import LeaveHistoryTable from "@/components/dashboard/LeaveHistoryTable";
+import LeaveHistoryTable from "@/components/employee/LeaveHistoryTable";
 
 export default function DashboardPage() {
   return (

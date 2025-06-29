@@ -1,4 +1,4 @@
-import LeaveApplyForm from "@/components/leave/LeaveApplyForm";
+import LeaveApplyForm from "@/components/employee/LeaveApplyForm";
 
 export default function LeaveApplyPage() {
   return (
