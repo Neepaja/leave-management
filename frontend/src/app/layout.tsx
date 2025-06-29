@@ -1,5 +1,3 @@
-import Header from "../components/layout/Header";
-import Sidebar from "../components/layout/Sidebar";
 import "./globals.css";
 import { ReactNode } from "react";
 
@@ -11,18 +9,11 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className="flex h-full overflow-hidden bg-[#ededed]">
-        <Sidebar />
-
-        <div className="flex flex-col flex-1 min-h-screen">
-          <Header title="Dashboard" />
-          <main className="flex-1 overflow-hidden p-6">{children}</main>
-        </div>
-      </body>
+      <body className="min-h-screen bg-[#ededed]">{children}</body>
     </html>
   );
 }
