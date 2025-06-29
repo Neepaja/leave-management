@@ -128,7 +128,6 @@ export default function LeaveRequestsTable() {
         </table>
       </div>
 
-      {/* Modal for confirmation */}
       <Modal
         isOpen={selectedId !== null && actionType !== null}
         onClose={closeModal}

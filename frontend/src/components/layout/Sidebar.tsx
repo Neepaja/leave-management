@@ -15,8 +15,7 @@ const Sidebar = () => {
     { href: "/employee/dashboard", label: "Dashboard", icon: <FiHome /> },
     { href: "/employee/leave/apply", label: "Apply Leave", icon: <FiEdit /> },
     { href: "/manager/dashboard", label: "View Leave Status", icon: <FiEye /> },
-    { href: "/manager/requests", label: "Approve Requests", icon: <FiCheckCircle /> },
-    { href: "/hr/records", label: "HR Records", icon: <FiFolder /> },
+    { href: "/hr/dashboard", label: "HR Records", icon: <FiFolder /> },
   ];
 
 return (
