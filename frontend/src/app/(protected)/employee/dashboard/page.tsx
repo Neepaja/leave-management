@@ -1,15 +1,13 @@
 "use client";
-
-import Link from "next/link";
-import LeaveSummaryCard from "@/components/dashboard/LeaveSummaryCard";
+import LeaveSummaryCard from "@/components/ui/LeaveSummaryCard";
 import LeaveHistoryTable from "@/components/employee/LeaveHistoryTable";
 
 export default function DashboardPage() {
   return (
     <div className="space-y-6 p-4">
       <div>
-        <h2 className="text-2xl font-bold text-gray-800">Leave Dashboard</h2>
-        <p className="text-gray-600 text-sm mt-1">Overview of your leave activity and balances.</p>
+        <h2 className="text-2xl font-bold text-gray-800">Leave Overview</h2>
+        <p className="text-gray-600 text-sm mt-1">Check your leave activity and balances.</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -20,15 +18,6 @@ export default function DashboardPage() {
       </div>
 
       <LeaveHistoryTable />
-
-      <div className="flex justify-end">
-        <Link
-          href="/leave/apply"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        >
-          Apply Leave
-        </Link>
-      </div>
     </div>
   );
 }

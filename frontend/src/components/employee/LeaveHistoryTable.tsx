@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const mockData = [
   {
     type: "Sick Leave",
@@ -22,7 +24,17 @@ const mockData = [
 export default function LeaveHistoryTable() {
   return (
     <div className="bg-white rounded-lg shadow p-4 overflow-x-auto">
+      <div className="flex justify-between items-center mb-4">
       <h3 className="text-lg font-semibold mb-4 text-gray-800">Leave History</h3>
+            <div className="flex justify-end">
+        <Link
+          href="/employee/leave/apply"
+          className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition text-sm"
+        >
+          Apply Leave
+        </Link>
+      </div>
+      </div>
       <table className="min-w-full border">
         <thead className="bg-gray-100">
           <tr>
