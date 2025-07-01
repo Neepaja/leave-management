@@ -89,14 +89,11 @@ exports.viewTeamLeaves = async (req, res) => {
 // Approve or reject requests (Manager)
 exports.updateLeaveStatus = async (req, res) => {
   try {
-    // Log the user info for debugging
     console.log('Authenticated User:', req.user);
 
     const { leaveId } = req.params;
     const { status, note } = req.body;
-    const approverId = req.user.userId; // Make sure this matches your auth middleware
-
-    // Validate status input
+    const approverId = req.user.userId; 
     const validStatuses = ['approved', 'rejected'];
     if (!validStatuses.includes(status)) {
       return res.status(400).json({
@@ -105,7 +102,6 @@ exports.updateLeaveStatus = async (req, res) => {
       });
     }
 
-    // Find the leave request by PK
     const leave = await LeaveRequest.findByPk(leaveId);
 
     if (!leave) {
@@ -115,15 +111,13 @@ exports.updateLeaveStatus = async (req, res) => {
       });
     }
 
-    // Update leave properties
+   
     leave.status = status;
     leave.note = note ?? leave.note;
     leave.approvedBy = approverId;
 
-    // Save the updated leave
     await leave.save();
 
-    // Fetch updated leave with associated users
     const leaveWithApprover = await LeaveRequest.findByPk(leaveId, {
       include: [
         { model: User, as: 'User', attributes: ['name', 'email'] },
@@ -132,14 +126,12 @@ exports.updateLeaveStatus = async (req, res) => {
     });
 
     if (!leaveWithApprover) {
-      // This should rarely happen, but safe check
+
       return res.status(500).json({
         success: false,
         message: 'Failed to retrieve updated leave.',
       });
     }
-
-    // Respond with success, message and the updated leave data
     return res.json({
       success: true,
       message: `Leave ${status} successfully.`,
