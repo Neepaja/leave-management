@@ -9,8 +9,14 @@ A simple full-stack backend prototype for managing employee leave requests, buil
 
 - Employee login and leave application  
 - Manager and HR roles to view, approve, or reject leave requests  
-- Role-based authentication (JWT)  
-- RESTful API with Sequelize migrations and seeders 
+- Role-based authentication (**JWT**)  
+- RESTful API with **Sequelize migrations** and **seeders** 
+- **Middleware setup** for backend authentication and error handling  
+- Clean, responsive **frontend built with Next.js, React, and Tailwind CSS**  
+- Uses **TypeScript** for type safety  
+- Integrated **toast notifications** for user feedback  
+- Clean file structure with **API services separated using interfaces**  
+- Environment-based configuration support 
 
 ---
 
@@ -23,6 +29,13 @@ A simple full-stack backend prototype for managing employee leave requests, buil
 - PostgreSQL  
 - JWT for authentication  
 
+**Frontend**
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- React Toastify
+
 ---
 
 ## Prerequisites
@@ -33,7 +46,9 @@ A simple full-stack backend prototype for managing employee leave requests, buil
 
 ---
 
-## Installation
+## Setup Instructions
+
+## Backend Setup
 
 ```bash
 # Clone the repository
@@ -73,8 +88,54 @@ npx sequelize-cli db:seed:all
 
 ```bash
 npm start
+---
 
+# OR for development with auto reload:
+```bash
+npm run dev
 ```
+
+### Frontend Setup
+
+```bash
+cd leave-management/frontend
+npm install
+
+## Start the frontend
+
+```bash
+npm run dev
+```
+
+## Demo Credentials
+
+Use these credentials to test the application:
+
+**Employee**
+- Email: `employee@example.com`
+- Password: `password123`
+
+**Manager**
+- Email: `manager@example.com`
+- Password: `password123`
+
+**HR**
+- Email: `hr@example.com`
+- Password: `password123`
+
+
+## Assumptions & Known Limitations
+
+- The system assumes a single Manager and HR for demo; role expansion may need adjustments.
+- Uses localStorage for JWT token management; consider HttpOnly cookies for production.
+- No email verification, password reset, or account recovery flows implemented.
+- Leave overlapping validations are basic and may require enhancement for production.
+- No notification system integrated for leave status updates.
+- Designed for small-scale demo use; scalability and performance optimization are pending.
+- UI/UX optimizations and accessibility considerations are minimal in this demo version.
+- No Docker or CI/CD setup included in this phase.
+
+---
 
 ## License
 
