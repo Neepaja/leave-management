@@ -31,11 +31,11 @@ fs
     db[model.name] = model;
   });
 
-db.User = db['User'];
-db.LeaveRequest = db['LeaveRequest'];
+db.User.hasMany(db.LeaveRequest, { foreignKey: 'userId', as: 'leaves' });
+db.LeaveRequest.belongsTo(db.User, { foreignKey: 'userId', as: 'User' });
 
-db.User.hasMany(db.LeaveRequest, { foreignKey: 'userId' });
-db.LeaveRequest.belongsTo(db.User, { foreignKey: 'userId' });
+db.User.hasMany(db.LeaveRequest, { foreignKey: 'approvedBy', as: 'approvedLeaves' });
+db.LeaveRequest.belongsTo(db.User, { foreignKey: 'approvedBy', as: 'approver' });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

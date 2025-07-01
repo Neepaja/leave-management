@@ -7,6 +7,7 @@ module.exports = {
     const hashedPassword1 = await bcrypt.hash('emp123', 10);
     const hashedPassword2 = await bcrypt.hash('mgr123', 10);
     const hashedPassword3 = await bcrypt.hash('hr123', 10);
+    const hashedPassword4 = await bcrypt.hash('emp456', 10);
 
     await queryInterface.bulkInsert('Users', [
       {
@@ -14,6 +15,15 @@ module.exports = {
         name: 'Emp Person',
         email: 'emp@example.com',
         password: hashedPassword1,
+        role: 'employee',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        user_id: uuidv4(),
+        name: 'Emp Two',
+        email: 'emp2@example.com',
+        password: hashedPassword4,
         role: 'employee',
         createdAt: new Date(),
         updatedAt: new Date()
