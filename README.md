@@ -1,5 +1,5 @@
 
-# Leave Management Backend
+# Leave Management
 
 A full-stack prototype application for managing employee leave requests, featuring a robust backend built with Node.js, Express, Sequelize ORM, and PostgreSQL for data management. The frontend is developed using Next.js, React, and TypeScript, and styled with Tailwind CSS.
 
