@@ -148,4 +148,4 @@ This project is for demonstration/testing purposes.
 
 ## Author
 
-Developed by Neepaja Sarvanantham for Reservato.ai Test Task.
+Developed by Neepaja Sarvanantham.
